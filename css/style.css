@@ -1,0 +1,13 @@
+#body {
+    height: 2000px;
+}
+
+.FakeWall {
+    background-image: url(../img/wall.png);
+    height: 100%;
+}
+
+.FakeCorkWall {
+    background-image: url(../img/cork.png);
+    height: 60%;
+}
