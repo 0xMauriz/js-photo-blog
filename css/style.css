@@ -6,6 +6,11 @@
     height: 100vh;
 }
 
+.container1 {
+    width: 70%;
+    height: 100%;
+}
+
 .FakeWall {
     background-image: url(../img/wall.png);
     height: 15%;
@@ -14,4 +19,17 @@
 .FakeCorkWall {
     background-image: url(../img/cork.png);
     height: 85%;
+}
+
+.card {
+    width: 30%;
+    border-radius: 0px;
+}
+
+.CardImage {
+    height: 80%;
+}
+
+.CardText {
+    height: 15%;
 }
