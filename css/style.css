@@ -42,10 +42,15 @@
     color: gray;
     font-size: 20px;
     margin-top: -2px;
-
+    background-size: cover;
 }
 
-.CardText {
-    height: 15%;
+.CardTitle {
+    height: 8%;
   font-family: "Edu TAS Beginner", cursive;
+}
+
+.CardDate {
+    height: 7%;
+  font-family: "Sometype Mono", monospace;
 }
