@@ -6,30 +6,46 @@
     height: 100vh;
 }
 
-.container1 {
-    width: 70%;
+.CardsContainer {
+    width: 57%;
     height: 100%;
 }
 
 .FakeWall {
     background-image: url(../img/wall.png);
     height: 15%;
+  font-family: "Edu TAS Beginner", cursive;
 }
 
 .FakeCorkWall {
     background-image: url(../img/cork.png);
     height: 85%;
+    padding-top: 40px;
+    padding-bottom: 5px;
 }
 
 .card {
-    width: 30%;
+    width: calc(90% / 3);
+    height: 47%;
     border-radius: 0px;
 }
 
+.Pin {
+    margin: -10px auto 0px auto;
+    overflow: auto;
+    width: 25px;
+    
+}
+
 .CardImage {
-    height: 80%;
+    height: 70%;
+    color: gray;
+    font-size: 20px;
+    margin-top: -2px;
+
 }
 
 .CardText {
     height: 15%;
+  font-family: "Edu TAS Beginner", cursive;
 }
