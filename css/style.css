@@ -63,6 +63,18 @@
     width: 50vh;
 }
 
-.Transparency-50 {
-    background-color: rgba(0, 0, 0, 0)
+.h-90 {
+    height: 90%;
+}
+
+.Transparency-70 {
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
+.z-Index-First {
+    z-index: 20;
+}
+
+.z-Index-Last {
+    z-index: 0;
 }

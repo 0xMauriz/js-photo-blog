@@ -12,11 +12,6 @@ axios.get(cardBackgroundEndpoint)
 
         let responseOne = response.data;
 
-        
-        body.innerHTML = `<div id="Image-Container" class="d-flex flex-wrap vh-100 vw-100 Transparency-50 justify-content-center align-items-center">
-        <div class="w-50 h-50"><button id="CloseButton" class="">Chiudi</button>
-        <img class="Image-Temp h-100 w-100 Center-Img" src="${responseOne[2].url}" alt=""></div></div>`
-
 
 
         for (let i = 0; i < 6; i++) {
@@ -29,17 +24,28 @@ axios.get(cardBackgroundEndpoint)
                 <div class="CardDate py-2">${responseOne[i].date}</div>
             </div>`;
 
+            
+        }
+
+        
+        body.innerHTML += `<div id="Image-Container" class="d-flex position-absolute flex-wrap z-Index-First vh-100 vw-100 Transparency-70 justify-content-center align-items-center">
+        <div class="w-50 h-50"><div class="d-flex py-5 align-content-center justify-content-center"><button id="CloseButton">Chiudi</button></div>
+        <img class="Image-Temp h-90 w-100 Center-Img" src="${responseOne[2].url}" alt=""></div></div>`
 
         const imgContainer = document.getElementById("Image-Container");
         const closeButton = document.getElementById("CloseButton");
+        const container0 = document.querySelector(".container0");
 
         closeButton.addEventListener('click', function () {
             imgContainer.classList.remove("d-flex");
             imgContainer.classList.add("d-none");
         })
 
-        }
-    })
+        })
+        
+
+        
+    
 
     .then(response => {
 
