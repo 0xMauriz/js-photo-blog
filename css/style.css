@@ -54,3 +54,15 @@
     height: 7%;
   font-family: "Sometype Mono", monospace;
 }
+
+.vh-50 {
+    height: 50vh;
+}
+
+.vw-50 {
+    width: 50vh;
+}
+
+.Transparency-50 {
+    background-color: rgba(0, 0, 0, 0)
+}
