@@ -24,10 +24,10 @@ axios.get(cardBackgroundEndpoint)
                 <div class="CardDate py-2">${responseOne[i].date}</div>
             </div>`;
 
-            
+
         }
 
-        
+
         body.innerHTML += `<div id="Image-Container" class="d-flex position-absolute flex-wrap z-Index-First vh-100 vw-100 Transparency-70 justify-content-center align-items-center">
         <div class="w-50 h-50"><div class="d-flex py-5 align-content-center justify-content-center"><button id="CloseButton">Chiudi</button></div>
         <img class="Image-Temp h-90 w-100 Center-Img" src="${responseOne[2].url}" alt=""></div></div>`
@@ -41,15 +41,14 @@ axios.get(cardBackgroundEndpoint)
             imgContainer.classList.add("d-none");
         })
 
-        })
-        
+    })
 
-        
-    
+
+
+
 
     .then(response => {
 
-        const pin = document.querySelectorAll(".Pin");
 
         const allCards = document.querySelectorAll('.card');
 
@@ -57,22 +56,28 @@ axios.get(cardBackgroundEndpoint)
 
         allCards.forEach(card => {
 
-                card.addEventListener('mouseenter', function () {
+            const pin = card.querySelector(".Pin");
 
-                    pin.forEach(element => element.classList.add("d-none"))
+            card.addEventListener('mouseenter', function () {
 
-                });
+                    pin.classList.add("d-none");
+                    card.classList.add("rotate-10deg");
+
+            });
+
+            
+            card.addEventListener('mouseleave', function () {
+
+                    pin.classList.remove("d-none");
+                    card.classList.remove("rotate-10deg");
+
+            });
+
+            card.addEventListener('click', function () {
+                imgContainer.classList.remove("d-none");
+                imgContainer.classList.add("d-flex");
+            })
         });
-
-        allCards.forEach(card => {
-
-                card.addEventListener('mouseleave', function () {
-
-                    
-                    pin.forEach(element => element.classList.remove("d-none"))
-
-                });
-        })
 
     })
 

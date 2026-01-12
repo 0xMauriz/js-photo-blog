@@ -78,3 +78,7 @@
 .z-Index-Last {
     z-index: 0;
 }
+
+.rotate-10deg {
+    transform: rotate(10deg);
+}
