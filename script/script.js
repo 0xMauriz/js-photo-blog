@@ -27,18 +27,28 @@ axios.get(cardBackgroundEndpoint)
 
         }
 
+        
+        const allCards = document.querySelectorAll('.card');
 
-        body.innerHTML += `<div id="Image-Container" class="d-flex position-absolute flex-wrap z-Index-First vh-100 vw-100 Transparency-70 justify-content-center align-items-center">
-        <div class="w-50 h-50"><div class="d-flex py-5 align-content-center justify-content-center"><button id="CloseButton">Chiudi</button></div>
-        <img class="Image-Temp h-90 w-100 Center-Img" src="${responseOne[2].url}" alt=""></div></div>`
+        
+        allCards[1].addEventListener('click', function () {
 
-        const imgContainer = document.getElementById("Image-Container");
-        const closeButton = document.getElementById("CloseButton");
-        const container0 = document.querySelector(".container0");
+                body.innerHTML += `<div id="Image-Container-Advanced" class="d-none position-absolute flex-wrap z-Index-First vh-100 vw-100 Transparency-70 justify-content-center align-items-center">
+        <div class="w-50 h-50"><div class="d-flex py-5 align-content-center justify-content-center"><button id="CloseButton-Advanced">Chiudi</button></div>
+        <img class="Image-Temp h-90 w-100 Center-Img" src="${responseOne[1].url}" alt=""></div></div>`
 
-        closeButton.addEventListener('click', function () {
-            imgContainer.classList.remove("d-flex");
-            imgContainer.classList.add("d-none");
+                const imgContainerAdvanced = document.getElementById("Image-Container-Advanced");
+
+                imgContainerAdvanced.classList.remove("d-none");
+                imgContainerAdvanced.classList.add("d-flex");
+
+                
+        const closeButtonAdvanced = document.getElementById("CloseButton-Advanced");
+
+        closeButtonAdvanced.addEventListener('click', function () {
+            imgContainerAdvanced.classList.remove("d-flex");
+            imgContainerAdvanced.classList.add("d-none");
+        })
         })
 
     })
@@ -57,6 +67,7 @@ axios.get(cardBackgroundEndpoint)
         allCards.forEach(card => {
 
             const pin = card.querySelector(".Pin");
+            
 
             card.addEventListener('mouseenter', function () {
 
@@ -72,11 +83,6 @@ axios.get(cardBackgroundEndpoint)
                     card.classList.remove("rotate-10deg");
 
             });
-
-            card.addEventListener('click', function () {
-                imgContainer.classList.remove("d-none");
-                imgContainer.classList.add("d-flex");
-            })
         });
 
     })
