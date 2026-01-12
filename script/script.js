@@ -27,29 +27,24 @@ axios.get(cardBackgroundEndpoint)
 
         }
 
-        
+
         const allCards = document.querySelectorAll('.card');
+        const closeButton = document.getElementById('CloseButton');
+        const overlayImg = document.getElementById('OverlayImg');
+        const imageContainer = document.getElementById('Image-Container');
 
-        
-        allCards[1].addEventListener('click', function () {
+        allCards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                overlayImg.src = responseOne[index].url;
+                imageContainer.classList.remove("d-none");
+                imageContainer.classList.add("d-flex");
+            });
+        });
 
-                body.innerHTML += `<div id="Image-Container-Advanced" class="d-none position-absolute flex-wrap z-Index-First vh-100 vw-100 Transparency-70 justify-content-center align-items-center">
-        <div class="w-50 h-50"><div class="d-flex py-5 align-content-center justify-content-center"><button id="CloseButton-Advanced">Chiudi</button></div>
-        <img class="Image-Temp h-90 w-100 Center-Img" src="${responseOne[1].url}" alt=""></div></div>`
-
-                const imgContainerAdvanced = document.getElementById("Image-Container-Advanced");
-
-                imgContainerAdvanced.classList.remove("d-none");
-                imgContainerAdvanced.classList.add("d-flex");
-
-                
-        const closeButtonAdvanced = document.getElementById("CloseButton-Advanced");
-
-        closeButtonAdvanced.addEventListener('click', function () {
-            imgContainerAdvanced.classList.remove("d-flex");
-            imgContainerAdvanced.classList.add("d-none");
-        })
-        })
+        closeButton.addEventListener('click', () => {
+            imageContainer.classList.add("d-none");
+            imageContainer.classList.remove("d-flex");
+        });
 
     })
 
@@ -67,20 +62,20 @@ axios.get(cardBackgroundEndpoint)
         allCards.forEach(card => {
 
             const pin = card.querySelector(".Pin");
-            
+
 
             card.addEventListener('mouseenter', function () {
 
-                    pin.classList.add("d-none");
-                    card.classList.add("rotate-10deg");
+                pin.classList.add("d-none");
+                card.classList.add("rotate-10deg");
 
             });
 
-            
+
             card.addEventListener('mouseleave', function () {
 
-                    pin.classList.remove("d-none");
-                    card.classList.remove("rotate-10deg");
+                pin.classList.remove("d-none");
+                card.classList.remove("rotate-10deg");
 
             });
         });
