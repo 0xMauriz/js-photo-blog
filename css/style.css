@@ -28,6 +28,7 @@
     width: calc(90% / 3);
     height: 47%;
     border-radius: 0px;
+    cursor: pointer;
 }
 
 .Pin {
